@@ -1,4 +1,5 @@
 import "./style.css"
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -26,7 +27,7 @@ const Navbar = () => {
               Action
             </a>
             <a class="dropdown-item" href="#tab3Id">
-              Another action
+               Cari Mobil
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#tab4Id">
@@ -35,9 +36,10 @@ const Navbar = () => {
           </div>
         </li>
         <li class="nav-item">
-          <a href="#tab5Id" class="nav-link">
-            Another link
-          </a>
+          <Link to="/cari-mobil">Cari Mobil</Link>
+          {/* <a href="/cari-mobil" class="nav-link">
+            Cari Mobil
+          </a> */}
         </li>
         <li class="nav-item">
           <a href="##" class="nav-link disabled">
