@@ -26,20 +26,20 @@ const Home = () => {
 
 //4.  real case useEffect dipergunakan untuk fetching data dari Server
 
-  useEffect(()=> {
-     console.log("effect run after component render")
-  }, [cardTitle]);
+  // useEffect(()=> {
+  //    console.log("effect run after component render")
+  // }, [cardTitle]);
 
   const handleButtonCard = () => {
     setCardTitle(prevState => prevState === "Golden Gate" ? "Card Title" : "Golden Gate")
-  }
+    }
 
   const handleButtonOnClick = () => {
     const callbackState = (previousState) => {
       return !previousState;
     };
 
-    setDisplayWhyUs(callbackState);
+    setDisplayWhyUs(false);
   };
 
   return (

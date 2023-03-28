@@ -10,6 +10,8 @@ const FormInput = () => {
   const [valueNamaMobil, setNamaMobil] = useState("");
   const [displayResult, setDisplayResult] = useState(false);
 
+  console.log({valueNamaMobil})
+
   const handleOnClick = () => {
     setDisplayResult(true);
   };
