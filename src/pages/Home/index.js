@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
 import FormInput from "../../components/FormInput";
@@ -12,17 +12,30 @@ import {
   CardText,
 } from "reactstrap";
 
-//props dan state adalah bagaimana caranya component react kita menghandle data
-// erat kaitannya dengan data flow di component react kita
+// tampilkan log effect setelah component berhasil di render
 
 const Home = () => {
+  const [cardTitle, setCardTitle] = useState("Card title")
   const [displayWhyUs, setDisplayWhyUs] = useState(true); // => hooks state
 
-  console.log({ displayWhyUs });
+ // 1. dijalankan setelah compoennt berhasil dirender pertama kali
+
+ // 2 effect akan dijalankan tergantung kondisi dan keinginan kita, berdasarkan perubahan state
+
+ // 3 effect akan berjalan terus apapun kondisinya + apapun statenya
+
+//4.  real case useEffect dipergunakan untuk fetching data dari Server
+
+  useEffect(()=> {
+     console.log("effect run after component render")
+  }, [cardTitle]);
+
+  const handleButtonCard = () => {
+    setCardTitle(prevState => prevState === "Golden Gate" ? "Card Title" : "Golden Gate")
+  }
 
   const handleButtonOnClick = () => {
     const callbackState = (previousState) => {
-      console.log({ previousState });
       return !previousState;
     };
 
@@ -76,13 +89,13 @@ const Home = () => {
         <CardBody>
           <CardTitle tag="h5">Card title</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
-            Card subtitle
+            {cardTitle}
           </CardSubtitle>
           <CardText>
             Some quick example text to build on the card title and make up the
             bulk of the card‘s content.
           </CardText>
-          <Button>Button</Button>
+          <Button onClick={handleButtonCard}>Change Title Card</Button>
         </CardBody>
       </CardBootstrap>
     </div>
