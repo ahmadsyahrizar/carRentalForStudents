@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useHistory, useParams} from "react-router-dom"
 import TextField from "../TextField";
 import Select from "../Select";
 import { catOptions, hargaOptions, statusOptions } from "./../../constants";
@@ -13,6 +14,7 @@ const FormInput = () => {
   const [valueNamaMobil, setNamaMobil] = useState("");
   const [listCars, setListCars] = useState([]);
   const [loading, setLoading] = useState(false);
+  const {push} = useHistory()
 
   console.log({ listCars });
 
@@ -37,6 +39,11 @@ const FormInput = () => {
         setLoading(false);
       });
   };
+
+
+  const handlePilihMobil = (param) => {
+    push(`/cari-mobil/${param}`)
+  }
 
   return (
     <div style={{ margin: "32px" }}>
@@ -96,7 +103,7 @@ const FormInput = () => {
             alignItems: "center",
           }}
         >
-          {listCars.map(({ image, name, price }) => {
+          {listCars.map(({id, image, name, price }) => {
             return (
               <div class="card">
                 <div style={{ width: "270px", height: "auto" }}>
@@ -112,6 +119,9 @@ const FormInput = () => {
                   <h4 class="card-title">{name}</h4>
                   <p class="card-text">{price}</p>
                 </div>
+
+                  <Button onClick={()=>handlePilihMobil(id)} style={{margin: '1em', backgroundColor: "#5CB85F", border: 'none', borderRadius: "2px"}}>Pilih Mobil</Button>
+
               </div>
             );
           })}
