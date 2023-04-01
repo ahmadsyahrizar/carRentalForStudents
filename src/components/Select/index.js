@@ -14,9 +14,9 @@ const Select = ({ labelValue, items, onChange, value }) => {
         id=""
         onChange={handleOnChange}
       >
-        {items.map(({ id, text }) => {
+        {items.map(({ id, text, value }) => {
           return (
-            <option key={id} value={text}>
+            <option key={id} value={value}>
               {text}
             </option>
           );
