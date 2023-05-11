@@ -1,0 +1,21 @@
+flow: 
+ - membuat sebuah page baru, yaitu sigin page (username, password, dan button Login). ✅
+ - ketika login button di hit, maka akan memunculkan loading state.✅
+ - ketika login berhasil, akan redirect ke halaman HOME/Landing Page  (sudah ada di pengerjaan level gold).  ✅
+ - ketika login error/gagal, akan memunculkan state error di halaman sign in nya.
+✅
+- consume data redux di navbar
+
+
+ expectation login:
+ - global state management (react-redux, & redux/toolkit).✅
+ - middleware ✅
+ - dummy api untuk login. ✅
+
+ tools:
+ - install chrome extension ("react developer tools", "redux developer tools").✅
+
+
+redux/toolkit & react-redux
+1. store/index.js
+2.

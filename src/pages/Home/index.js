@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
 import FormInput from "../../components/FormInput";
 // import WhyUs from "../../components/WhyUs";
@@ -18,7 +17,6 @@ import {
 const Home = () => {
   return (
     <div>
-      <Navbar />
       {/* <Card description="Binar Bagus Banget" reviewer="rijarmdh" /> */}
       <FormInput />
 
